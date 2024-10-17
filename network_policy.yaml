@@ -25,3 +25,5 @@ spec:
   containers:
     - name: myc
       image: httpd
+      ports:
+        - containersPort: 81
