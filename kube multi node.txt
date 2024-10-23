@@ -178,5 +178,17 @@ $ iptables -t mangle  -F
 
 
 
+Download and install flunnel but confirm this 
+--pod-network-cidr=10.244.0.0/16
+
+
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+To Run in t3.micro instance in AWS
+
+kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=NumCPU --ignore-preflight-errors=Mem
+
+
+
 
 

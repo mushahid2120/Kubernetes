@@ -49,3 +49,12 @@ dnf install -y cri-o kubelet kubeadm kubectl
 systemctl enable --now crio
 
 systemctl enable --now kubelet
+
+for flannul cni
+kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=NumCPU --ignore-preflight-errors=Mem --node-name master
+
+kubeadm init --pod-network-cidr=10.32.0.0/12  --ignore-preflight-errors=NumCPU --ignore-preflight-errors=Mem --node-name master
+for weave cni
+
+kubeadm init--pod-network-cidr=92.168.0.0/16  --ignore-preflight-errors=NumCPU --ignore-preflight-errors=Mem --node-name master
+for calico
