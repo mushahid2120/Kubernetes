@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mydp
+  name: mydp
+spec:
+  replicas: {{ .Values.replicationCount }}
+  selector:
+    matchLabels:
+      app: mydp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mydp
+    spec:
+      containers:
+      - image: httpd
+        name: httpd
+        resources: {}
+status: {}
